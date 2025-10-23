@@ -1,0 +1,50 @@
+# =====================
+# Python Backend
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.egg-info/
+*.egg
+venv/
+env/
+ENV/
+.venv/
+*.log
+.env
+
+# =====================
+# React Frontend
+# =====================
+frontend/restaurant-frontend/node_modules/
+frontend/restaurant-frontend/build/
+frontend/restaurant-frontend/coverage/
+frontend/restaurant-frontend/.pnp
+frontend/restaurant-frontend/.pnp.js
+frontend/restaurant-frontend/npm-debug.log*
+frontend/restaurant-frontend/yarn-debug.log*
+frontend/restaurant-frontend/yarn-error.log*
+frontend/restaurant-frontend/.env.local
+frontend/restaurant-frontend/.env.development.local
+frontend/restaurant-frontend/.env.test.local
+frontend/restaurant-frontend/.env.production.local
+frontend/restaurant-frontend/.DS_Store
+
+# =====================
+# IDE / Editor files
+# =====================
+.idea/
+*.iml
+*.iws
+
+# =====================
+# System files
+# =====================
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*.bak
