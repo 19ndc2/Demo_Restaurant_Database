@@ -30,7 +30,7 @@ function NewCustomer() {
             setLoadingCustomers(true); // start loading
             setErrorCustomers(null); //clear previous errors 
             try {
-                const res = await fetch('http://127.0.0.1:5000/get_customer_names');
+                const res = await fetch('https://crusted-laura-unjudging.ngrok-free.dev/restaurant/get_customer_names',{headers: {"ngrok-skip-browser-warning": "true"}});
                 if (!res.ok) throw new Error(`Error ${res.status}`);
                 const data = await res.json();
                 setCustomers(data);           // set the fetched data
@@ -55,7 +55,7 @@ function NewCustomer() {
         }
         setLoading(true); //show loading spinner
 
-        const res = await fetch(`http://127.0.0.1:5000/customer/${email}`);
+        const res = await fetch(`https://crusted-laura-unjudging.ngrok-free.dev/restaurant/customer/${email}`,{headers: {"ngrok-skip-browser-warning": "true"}});
         const data = await res.json();
         setSelectedCustomer(data);
         
@@ -76,9 +76,11 @@ function NewCustomer() {
         setLoading(true); //show loading spinner
         console.log("handling submit");
         try {
-          const response = await fetch('http://127.0.0.1:5000/add_customer', {
+          const response = await fetch('https://crusted-laura-unjudging.ngrok-free.dev/restaurant/add_customer', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json',
+                "ngrok-skip-browser-warning": "true"
+             },
             body: JSON.stringify(formData)
           });
     
@@ -99,7 +101,7 @@ function NewCustomer() {
             });
 
             // Refetch the customer list to include the new customer
-            const updatedList = await fetch('http://127.0.0.1:5000/get_customer_names')
+            const updatedList = await fetch('https://crusted-laura-unjudging.ngrok-free.dev/restaurant/get_customer_names',{headers: {"ngrok-skip-browser-warning": "true"}})
                 .then(res => res.json());
             setCustomers(updatedList);
             }

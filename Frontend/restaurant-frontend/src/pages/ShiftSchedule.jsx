@@ -16,8 +16,8 @@ function ShiftSchedule() {
             setError(null);
             try {
                 const [resResnames, resShifts] = await Promise.all([
-                    fetch('http://127.0.0.1:5000/get_resnames'),
-                    fetch('http://127.0.0.1:5000/get_shifts')
+                    fetch('https://crusted-laura-unjudging.ngrok-free.dev/restaurant/get_resnames',{headers: {"ngrok-skip-browser-warning": "true"}}),
+                    fetch('https://crusted-laura-unjudging.ngrok-free.dev/restaurant/get_shifts',{headers: {"ngrok-skip-browser-warning": "true"}})
                 ]);
 
                 if (!resResnames.ok) throw new Error(`Error fetching restaurants: ${resResnames.status}`);

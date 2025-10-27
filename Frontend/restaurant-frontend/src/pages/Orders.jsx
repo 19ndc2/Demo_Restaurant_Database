@@ -20,7 +20,7 @@ function Orders() {
 
         setLoading(true); //start loading
         try {
-          const res = await fetch(`http://127.0.0.1:5000/order/${date}`);
+          const res = await fetch(`https://crusted-laura-unjudging.ngrok-free.dev/restaurant/order/${date}`,{headers: {"ngrok-skip-browser-warning": "true"}});
           const data = await res.json();
     
           if (data.message) {
